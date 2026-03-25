@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
-# To learn more about the azure.yaml file, visit https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/azd-schema
 name: azd-rails-starter
 services:
   azure-rails-starter:
@@ -9,7 +7,7 @@ services:
     docker:
       path: ./Dockerfile
       ports:
-        - 80:3000
+      - 80:3000
 hooks:
   postprovision:
     windows:
@@ -22,3 +20,5 @@ hooks:
       run: azd env get-values > .env
       interactive: true
       continueOnError: false
+metadata:
+  template: azure-rails-starter@0.0.1-beta
